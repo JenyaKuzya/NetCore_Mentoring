@@ -9,6 +9,7 @@ using NetCore_Mentoring.Models;
 
 namespace NetCore_Mentoring.Controllers
 {
+    [Route("[controller]")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -18,12 +19,26 @@ namespace NetCore_Mentoring.Controllers
             _logger = logger;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpGet("categories")]
+        public IActionResult Categories()
+        {
+            return View();
+        }
+
+        [HttpGet("products")]
+        public IActionResult Products()
+        {
+            return View();
+        }
+
+        [HttpGet("contacts")]
+        public IActionResult Contacts()
         {
             return View();
         }
