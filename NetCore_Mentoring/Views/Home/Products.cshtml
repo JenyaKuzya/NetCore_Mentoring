@@ -12,4 +12,13 @@
         <th>Supplier</th>
         <th>Price</th>
     </tr>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>@product.Name</td>
+            <td>@product.CategoryName</td>
+            <td>@product.Supplier</td>
+            <td>@product.Price</td>
+        </tr>
+    }
 </table>

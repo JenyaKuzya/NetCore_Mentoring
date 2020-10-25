@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using NetCore_Mentoring.BLL.Services.Interfaces;
 using NetCore_Mentoring.Models;
 
 namespace NetCore_Mentoring.Controllers
@@ -13,10 +14,17 @@ namespace NetCore_Mentoring.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ICategoryService categoryService;
+        private readonly IProductService productService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(
+            ILogger<HomeController> logger, 
+            ICategoryService categoryService,
+            IProductService productService)
         {
             _logger = logger;
+            this.categoryService = categoryService;
+            this.productService = productService;
         }
 
         [HttpGet]
@@ -28,13 +36,17 @@ namespace NetCore_Mentoring.Controllers
         [HttpGet("categories")]
         public IActionResult Categories()
         {
-            return View();
+            var categories = categoryService.GetAll();
+
+            return View(categories);
         }
 
         [HttpGet("products")]
         public IActionResult Products()
         {
-            return View();
+            var products = productService.GetAll();
+
+            return View(products);
         }
 
         [HttpGet("contacts")]
