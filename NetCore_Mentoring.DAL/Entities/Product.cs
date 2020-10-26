@@ -1,15 +1,27 @@
-﻿namespace NetCore_Mentoring.DAL.Entities
+﻿using System;
+
+namespace NetCore_Mentoring.DAL.Entities
 {
     public class Product
     {
-        public long Id { get; set; }
+        public int ProductId { get; set; }
 
-        public string Name { get; set; }
+        public string ProductName { get; set; }
 
-        public string CategoryName { get; set; }
+        public int CategoryID { get; set; }
 
-        public string Supplier { get; set; }
+        public int SupplierID { get; set; }
 
-        public decimal Price { get; set; }
+        public string QuantityPerUnit { get; set; }
+
+        public decimal UnitPrice { get; set; }
+
+        public short UnitsInStock { get; set; }
+
+        public short UnitsOnOrder { get; set; }
+
+        public short ReorderLevel { get; set; }
+
+        public bool Discontinued { get; set; }
     }
 }

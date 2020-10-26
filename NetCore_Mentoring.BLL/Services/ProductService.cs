@@ -19,9 +19,9 @@ namespace NetCore_Mentoring.BLL.Services
 
         public IEnumerable<Product> GetAll()
         {
-            var categories = productRepository.GetAll();
+            var products = productRepository.GetAll();
 
-            return mapper.Map<IEnumerable<Product>>(categories);
+            return mapper.Map<IEnumerable<Product>>(products);
         }
     }
 }
