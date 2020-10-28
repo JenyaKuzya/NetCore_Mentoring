@@ -1,4 +1,5 @@
-﻿using NetCore_Mentoring.DAL.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using NetCore_Mentoring.DAL.Entities;
 using NetCore_Mentoring.DAL.EntityFramework;
 using NetCore_Mentoring.DAL.Repositories.Interfaces;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace NetCore_Mentoring.DAL.Repositories
 
         public IEnumerable<Category> GetAll()
         {
-            return db.Categories;
+            return db.Categories.AsNoTracking();
         }
     }
 }
