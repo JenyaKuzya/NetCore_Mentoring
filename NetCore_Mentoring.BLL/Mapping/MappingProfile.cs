@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using NetCore_Mentoring.BLL.Models;
-using Entities = NetCore_Mentoring.DAL.Entities;
+using NetCore_Mentoring.DAL.Entities;
 
 namespace NetCore_Mentoring.BLL.Mapping
 {
@@ -8,8 +8,8 @@ namespace NetCore_Mentoring.BLL.Mapping
     {
         public MappingProfile()
         {
-            CreateMap<Entities.Category, Category>();
-            CreateMap<Entities.Product, Product>();
+            CreateMap<Category, CategoryModel>().ReverseMap();
+            CreateMap<Product, ProductModel>().ReverseMap();
         }
     }
 }

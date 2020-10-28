@@ -2,7 +2,7 @@
 
 namespace NetCore_Mentoring.BLL.Models
 {
-    public class Product
+    public class ProductModel
     {
         public int ProductId { get; set; }
 

@@ -5,6 +5,6 @@ namespace NetCore_Mentoring.BLL.Services.Interfaces
 {
     public interface ICategoryService
     {
-        IEnumerable<Category> GetAll();
+        IEnumerable<CategoryModel> GetAll();
     }
 }

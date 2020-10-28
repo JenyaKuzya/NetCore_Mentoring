@@ -17,11 +17,11 @@ namespace NetCore_Mentoring.BLL.Services
             this.mapper = mapper;
         }
 
-        public IEnumerable<Category> GetAll()
+        public IEnumerable<CategoryModel> GetAll()
         {
             var categories = categoryRepository.GetAll();
 
-            return mapper.Map<IEnumerable<Category>>(categories);
+            return mapper.Map<IEnumerable<CategoryModel>>(categories);
         }
     }
 }

@@ -1,8 +1,10 @@
-﻿using NetCore_Mentoring.DAL.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using NetCore_Mentoring.DAL.Entities;
 using NetCore_Mentoring.DAL.EntityFramework;
 using NetCore_Mentoring.DAL.Repositories.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace NetCore_Mentoring.DAL.Repositories
 {
@@ -15,19 +17,38 @@ namespace NetCore_Mentoring.DAL.Repositories
             this.db = context;
         }
 
-        public IEnumerable<Product> Get(int count)
+        public async Task<IEnumerable<Product>> GetAsync(int count)
         {
             if (count == 0)
             {
-                return db.Products;
+                return await db.Products.AsNoTracking().ToListAsync();
             }
 
-            return db.Products.Take(count);
+            return await db.Products.Take(count).AsNoTracking().ToListAsync();
         }
 
-        public Product GetById(int productId)
+        public async Task<Product> GetByIdAsync(int productId)
         {
-            return db.Products.FirstOrDefault(product => product.ProductId == productId);
+            return await db.Products.AsNoTracking().FirstOrDefaultAsync(
+                product => product.ProductId == productId);
+        }
+
+        public async Task CreateAsync(Product product)
+        {
+            db.Add(product);
+            await db.SaveChangesAsync();
+        }
+
+        public async Task EditAsync(Product product)
+        {
+            db.Update(product);
+            await db.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(Product product)
+        {
+            db.Products.Remove(product);
+            await db.SaveChangesAsync();
         }
     }
 }

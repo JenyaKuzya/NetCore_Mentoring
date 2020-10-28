@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using NetCore_Mentoring.BLL.Models;
 using NetCore_Mentoring.BLL.Services.Interfaces;
+using NetCore_Mentoring.DAL.Entities;
 using NetCore_Mentoring.DAL.Repositories.Interfaces;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace NetCore_Mentoring.BLL.Services
 {
@@ -17,18 +19,39 @@ namespace NetCore_Mentoring.BLL.Services
             this.mapper = mapper;
         }
 
-        public IEnumerable<Product> Get(int count)
+        public async Task<IEnumerable<ProductModel>> GetAsync(int count)
         {
-            var products = productRepository.Get(count);
+            var products = await productRepository.GetAsync(count);
 
-            return mapper.Map<IEnumerable<Product>>(products);
+            return mapper.Map<IEnumerable<ProductModel>>(products);
         }
 
-        public Product GetById(int productId)
+        public async Task<ProductModel> GetByIdAsync(int productId)
         {
-            var product = productRepository.GetById(productId);
+            var product = await productRepository.GetByIdAsync(productId);
 
-            return mapper.Map<Product>(product);
+            return mapper.Map<ProductModel>(product);
+        }
+
+        public async Task CreateAsync(ProductModel product)
+        {
+            var newProduct = mapper.Map<Product>(product);
+
+            await productRepository.CreateAsync(newProduct);
+        }
+
+        public async Task EditAsync(ProductModel product)
+        {
+            var editedProduct = mapper.Map<Product>(product);
+
+            await productRepository.EditAsync(editedProduct);
+        }
+
+        public async Task DeleteAsync(ProductModel product)
+        {
+            var deletedProduct = mapper.Map<Product>(product);
+
+            await productRepository.DeleteAsync(deletedProduct);
         }
     }
 }
