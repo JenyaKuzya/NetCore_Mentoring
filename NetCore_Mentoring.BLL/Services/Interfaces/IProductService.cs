@@ -5,6 +5,8 @@ namespace NetCore_Mentoring.BLL.Services.Interfaces
 {
     public interface IProductService
     {
-        IEnumerable<Product> GetAll();
+        IEnumerable<Product> Get(int count);
+
+        Product GetById(int productId);
     }
 }

@@ -17,11 +17,18 @@ namespace NetCore_Mentoring.BLL.Services
             this.mapper = mapper;
         }
 
-        public IEnumerable<Product> GetAll()
+        public IEnumerable<Product> Get(int count)
         {
-            var products = productRepository.GetAll();
+            var products = productRepository.Get(count);
 
             return mapper.Map<IEnumerable<Product>>(products);
+        }
+
+        public Product GetById(int productId)
+        {
+            var product = productRepository.GetById(productId);
+
+            return mapper.Map<Product>(product);
         }
     }
 }

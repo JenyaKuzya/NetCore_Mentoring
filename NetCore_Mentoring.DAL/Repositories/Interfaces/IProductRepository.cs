@@ -5,6 +5,8 @@ namespace NetCore_Mentoring.DAL.Repositories.Interfaces
 {
     public interface IProductRepository
     {
-        IEnumerable<Product> GetAll();
+        IEnumerable<Product> Get(int count);
+
+        Product GetById(int productId);
     }
 }

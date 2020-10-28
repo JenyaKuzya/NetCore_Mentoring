@@ -2,6 +2,7 @@
 using NetCore_Mentoring.DAL.EntityFramework;
 using NetCore_Mentoring.DAL.Repositories.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace NetCore_Mentoring.DAL.Repositories
 {
@@ -14,9 +15,19 @@ namespace NetCore_Mentoring.DAL.Repositories
             this.db = context;
         }
 
-        public IEnumerable<Product> GetAll()
+        public IEnumerable<Product> Get(int count)
         {
-            return db.Products;
+            if (count == 0)
+            {
+                return db.Products;
+            }
+
+            return db.Products.Take(count);
+        }
+
+        public Product GetById(int productId)
+        {
+            return db.Products.FirstOrDefault(product => product.ProductId == productId);
         }
     }
 }

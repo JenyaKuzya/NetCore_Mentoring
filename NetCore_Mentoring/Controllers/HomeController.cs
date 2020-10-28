@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NetCore_Mentoring.BLL.Services.Interfaces;
 using NetCore_Mentoring.Models;
+using System.Diagnostics;
 
 namespace NetCore_Mentoring.Controllers
 {
@@ -15,7 +11,6 @@ namespace NetCore_Mentoring.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ICategoryService categoryService;
-        private readonly IProductService productService;
 
         public HomeController(
             ILogger<HomeController> logger, 
@@ -24,7 +19,6 @@ namespace NetCore_Mentoring.Controllers
         {
             _logger = logger;
             this.categoryService = categoryService;
-            this.productService = productService;
         }
 
         [HttpGet]
@@ -39,14 +33,6 @@ namespace NetCore_Mentoring.Controllers
             var categories = categoryService.GetAll();
 
             return View(categories);
-        }
-
-        [HttpGet("products")]
-        public IActionResult Products()
-        {
-            var products = productService.GetAll();
-
-            return View(products);
         }
 
         [HttpGet("contacts")]

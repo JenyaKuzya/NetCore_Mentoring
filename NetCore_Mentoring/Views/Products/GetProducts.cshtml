@@ -19,6 +19,11 @@
             <td>@product.CategoryID</td>
             <td>@product.SupplierID</td>
             <td>@product.UnitPrice</td>
+            <td>
+                <form method="get" action="/Products/{@product.ProductId}">
+                    <input type="submit" value="Edit" />
+                </form>
+            </td>
         </tr>
     }
 </table>
