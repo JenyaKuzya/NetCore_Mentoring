@@ -10,6 +10,7 @@ namespace NetCore_Mentoring.BLL.Mapping
         {
             CreateMap<Category, CategoryModel>().ReverseMap();
             CreateMap<Product, ProductModel>().ReverseMap();
+            CreateMap<Supplier, SupplierModel>().ReverseMap();
         }
     }
 }

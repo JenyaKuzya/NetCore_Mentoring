@@ -21,15 +21,21 @@ namespace NetCore_Mentoring.DAL.Repositories
         {
             if (count == 0)
             {
-                return await db.Products.AsNoTracking().ToListAsync();
+                return await db.Products
+                    .Include(p => p.Category)
+                    .Include(p => p.Supplier).AsNoTracking().ToListAsync();
             }
 
-            return await db.Products.Take(count).AsNoTracking().ToListAsync();
+            return await db.Products.Take(count)
+                .Include(p => p.Category)
+                .Include(p => p.Supplier).AsNoTracking().ToListAsync();
         }
 
         public async Task<Product> GetByIdAsync(int productId)
         {
-            return await db.Products.AsNoTracking().FirstOrDefaultAsync(
+            return await db.Products
+                .Include(p => p.Category)
+                .Include(p => p.Supplier).AsNoTracking().FirstOrDefaultAsync(
                 product => product.ProductId == productId);
         }
 

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace NetCore_Mentoring.DAL.Entities
+﻿namespace NetCore_Mentoring.DAL.Entities
 {
     public class Product
     {
@@ -10,7 +8,11 @@ namespace NetCore_Mentoring.DAL.Entities
 
         public int CategoryID { get; set; }
 
+        public Category Category { get; set; }
+
         public int SupplierID { get; set; }
+
+        public Supplier Supplier { get; set; }
 
         public string QuantityPerUnit { get; set; }
 

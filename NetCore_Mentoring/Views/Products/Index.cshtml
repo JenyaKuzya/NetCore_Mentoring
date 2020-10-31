@@ -17,10 +17,10 @@
                 @Html.DisplayNameFor(model => model.ProductName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CategoryID)
+                @Html.DisplayNameFor(model => model.CategoryId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SupplierID)
+                @Html.DisplayNameFor(model => model.SupplierId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.QuantityPerUnit)
@@ -50,10 +50,10 @@
                 @Html.DisplayFor(modelItem => item.ProductName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CategoryID)
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SupplierID)
+                @Html.DisplayFor(modelItem => item.Supplier.CompanyName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.QuantityPerUnit)

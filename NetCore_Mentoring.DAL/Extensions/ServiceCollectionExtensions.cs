@@ -13,6 +13,7 @@ namespace NetCore_Mentoring.BLL.Extensions
         {
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<ISupplierRepository, SupplierRepository>();
 
             string connection = configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ShopContext>(options => options.UseSqlServer(connection));

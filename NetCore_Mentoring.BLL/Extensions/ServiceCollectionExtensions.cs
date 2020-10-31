@@ -11,6 +11,7 @@ namespace NetCore_Mentoring.BLL.Extensions
         {
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ISupplierService, SupplierService>();
 
             return services;
         }

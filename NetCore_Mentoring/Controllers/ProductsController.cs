@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using NetCore_Mentoring.BLL.Models;
 using NetCore_Mentoring.BLL.Services.Interfaces;
 using NetCore_Mentoring.DAL.EntityFramework;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,16 +15,28 @@ namespace NetCore_Mentoring.API.Controllers
     {
         private readonly ShopContext _context;
         private readonly IProductService productService;
+        private readonly ICategoryService categoryService;
+        private readonly ISupplierService supplierService;
+        private readonly IConfiguration configuration;
 
-        public ProductsController(ShopContext context, IProductService productService)
+        public ProductsController(
+            ShopContext context, 
+            IProductService productService,
+            ICategoryService categoryService,
+            ISupplierService supplierService,
+            IConfiguration configuration)
         {
             _context = context;
             this.productService = productService;
+            this.categoryService = categoryService;
+            this.supplierService = supplierService;
+            this.configuration = configuration;
         }
 
         // GET: Products
-        public async Task<IActionResult> Index(int count = 0)
+        public async Task<IActionResult> Index()
         {
+            var count = Int32.Parse(configuration["CountOfProducts"]);
             var products = await productService.GetAsync(count);
 
             return View(products);
@@ -48,6 +63,8 @@ namespace NetCore_Mentoring.API.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
+            PopulateCategoriesDropDownList();
+            PopulateSuppliersDropDownList();
             return View();
         }
 
@@ -56,7 +73,7 @@ namespace NetCore_Mentoring.API.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductId,ProductName,CategoryID,SupplierID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued")] ProductModel product)
+        public async Task<IActionResult> Create([Bind("ProductId,ProductName,CategoryId,SupplierId,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued")] ProductModel product)
         {
             if (ModelState.IsValid)
             {
@@ -83,6 +100,8 @@ namespace NetCore_Mentoring.API.Controllers
                 return NotFound();
             }
 
+            PopulateCategoriesDropDownList();
+            PopulateSuppliersDropDownList();
             return View(product);
         }
 
@@ -93,7 +112,7 @@ namespace NetCore_Mentoring.API.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(
             int id, 
-            [Bind("ProductId,ProductName,CategoryID,SupplierID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued")] ProductModel product)
+            [Bind("ProductId,ProductName,CategoryId,SupplierId,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued")] ProductModel product)
         {
             if (id != product.ProductId)
             {
@@ -162,6 +181,20 @@ namespace NetCore_Mentoring.API.Controllers
         private bool ProductExists(int id)
         {
             return _context.Products.Any(e => e.ProductId == id);
+        }
+
+        private void PopulateCategoriesDropDownList()
+        {
+            var categories = categoryService.GetAll();
+
+            ViewBag.CategoryId = new SelectList(categories, "CategoryId", "CategoryName");
+        }
+
+        private void PopulateSuppliersDropDownList()
+        {
+            var suppliers = supplierService.GetAll();
+
+            ViewBag.SupplierId = new SelectList(suppliers, "SupplierId", "CompanyName");
         }
     }
 }

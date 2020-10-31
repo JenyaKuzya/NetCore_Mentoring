@@ -15,10 +15,14 @@ namespace NetCore_Mentoring.BLL.Models
 
         [Required]
         [DisplayName("Category")]
-        public int CategoryID { get; set; }
+        public int CategoryId { get; set; }
+
+        public CategoryModel Category { get; set; }
 
         [DisplayName("Supplier")]
-        public int SupplierID { get; set; }
+        public int SupplierId { get; set; }
+
+        public SupplierModel Supplier { get; set; }
 
         [DisplayName("Quantity")]
         [StringLength(20)]
