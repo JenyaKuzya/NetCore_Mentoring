@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NetCore_Mentoring.DAL.Entities;
 
-namespace NetCore_Mentoring.DAL.EntityFramework
+namespace NetCore_Mentoring.DAL.DatabaseContext
 {
     public class ShopContext : DbContext
     {

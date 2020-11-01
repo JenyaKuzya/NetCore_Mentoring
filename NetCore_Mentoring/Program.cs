@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using NetCore_Mentoring.API.Models;
+using NetCore_Mentoring.API.Utils;
 using System.IO;
 
 namespace NetCore_Mentoring
@@ -20,8 +20,8 @@ namespace NetCore_Mentoring
                     logging.ClearProviders();
                     logging.AddProvider(
                         new FileLoggerProvider(
-                            Path.Combine(Directory.GetCurrentDirectory(), 
-                            "logger.txt")));
+                            Path.Combine(Directory.GetCurrentDirectory(),
+                            "Logs/logger.txt")));
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {

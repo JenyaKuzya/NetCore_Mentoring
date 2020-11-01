@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace NetCore_Mentoring.API.Models
+namespace NetCore_Mentoring.API.Utils
 {
     public class FileLogger : ILogger
     {

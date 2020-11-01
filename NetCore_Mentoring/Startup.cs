@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using NetCore_Mentoring.API.Extensions;
 using NetCore_Mentoring.BLL.Extensions;
 using NetCore_Mentoring.BLL.Mapping;
+using NetCore_Mentoring.DAL.Extensions;
 using System.IO;
 
 namespace NetCore_Mentoring
@@ -57,12 +58,11 @@ namespace NetCore_Mentoring
                     context.HttpContext.Response.StatusCode);
             });
 
-            loggerFactory.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "logger.txt"));
+            loggerFactory.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "Logs/logger.txt"));
             var logger = loggerFactory.CreateLogger("FileLogger");
 
             logger.LogInformation("Run configure.");
             
-
             app.UseStaticFiles();
 
             app.UseRouting();

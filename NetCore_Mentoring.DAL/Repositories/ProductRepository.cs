@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NetCore_Mentoring.DAL.Entities;
-using NetCore_Mentoring.DAL.EntityFramework;
+using NetCore_Mentoring.DAL.DatabaseContext;
 using NetCore_Mentoring.DAL.Repositories.Interfaces;
 using System.Collections.Generic;
 using System.Linq;

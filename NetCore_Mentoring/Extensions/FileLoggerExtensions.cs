@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using NetCore_Mentoring.API.Models;
+using NetCore_Mentoring.API.Utils;
 
 namespace NetCore_Mentoring.API.Extensions
 {

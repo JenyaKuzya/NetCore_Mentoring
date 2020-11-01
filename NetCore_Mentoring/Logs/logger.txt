@@ -109,3 +109,102 @@ Home page was opened.
 Home page was opened.
 Home page was opened.
 Home page was opened.
+No type was specified for the decimal column 'UnitPrice' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+Run configure.
+Run configure.
+Now listening on: https://localhost:5001
+Now listening on: https://localhost:5001
+Now listening on: http://localhost:5000
+Now listening on: http://localhost:5000
+Application started. Press Ctrl+C to shut down.
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Hosting environment: Development
+Content root path: D:\My_folder\Studying\epam\NetCore_Mentoring\NetCore_Mentoring
+Content root path: D:\My_folder\Studying\epam\NetCore_Mentoring\NetCore_Mentoring
+Home page was opened.
+Home page was opened.
+No type was specified for the decimal column 'UnitPrice' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+No type was specified for the decimal column 'UnitPrice' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+Exception was thrown.
+Exception was thrown.
+Exception was thrown.
+Exception was thrown.
+Run configure.
+Run configure.
+Now listening on: https://localhost:5001
+Now listening on: https://localhost:5001
+Now listening on: http://localhost:5000
+Now listening on: http://localhost:5000
+Application started. Press Ctrl+C to shut down.
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Hosting environment: Development
+Content root path: D:\My_folder\Studying\epam\NetCore_Mentoring\NetCore_Mentoring
+Content root path: D:\My_folder\Studying\epam\NetCore_Mentoring\NetCore_Mentoring
+Home page was opened.
+Home page was opened.
+No type was specified for the decimal column 'UnitPrice' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+No type was specified for the decimal column 'UnitPrice' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+Run configure.
+Run configure.
+Now listening on: https://localhost:5001
+Now listening on: https://localhost:5001
+Now listening on: http://localhost:5000
+Now listening on: http://localhost:5000
+Application started. Press Ctrl+C to shut down.
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Hosting environment: Development
+Content root path: D:\My_folder\Studying\epam\NetCore_Mentoring\NetCore_Mentoring
+Content root path: D:\My_folder\Studying\epam\NetCore_Mentoring\NetCore_Mentoring
+Run configure.
+Run configure.
+Now listening on: https://localhost:5001
+Now listening on: https://localhost:5001
+Now listening on: http://localhost:5000
+Now listening on: http://localhost:5000
+Application started. Press Ctrl+C to shut down.
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Hosting environment: Development
+Content root path: D:\My_folder\Studying\epam\NetCore_Mentoring\NetCore_Mentoring
+Content root path: D:\My_folder\Studying\epam\NetCore_Mentoring\NetCore_Mentoring
+Home page was opened.
+Home page was opened.
+No type was specified for the decimal column 'UnitPrice' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+No type was specified for the decimal column 'UnitPrice' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+Current configuration count of products = 20.
+Current configuration count of products = 20.
+Home page was opened.
+Home page was opened.
+Home page was opened.
+Home page was opened.
+Run configure.
+Run configure.
+Now listening on: https://localhost:5001
+Now listening on: https://localhost:5001
+Now listening on: http://localhost:5000
+Now listening on: http://localhost:5000
+Application started. Press Ctrl+C to shut down.
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Hosting environment: Development
+Content root path: D:\My_folder\Studying\epam\NetCore_Mentoring\NetCore_Mentoring
+Content root path: D:\My_folder\Studying\epam\NetCore_Mentoring\NetCore_Mentoring
+Home page was opened.
+Home page was opened.
+Run configure.
+Run configure.
+Now listening on: https://localhost:5001
+Now listening on: https://localhost:5001
+Now listening on: http://localhost:5000
+Now listening on: http://localhost:5000
+Application started. Press Ctrl+C to shut down.
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Hosting environment: Development
+Content root path: D:\My_folder\Studying\epam\NetCore_Mentoring\NetCore_Mentoring
+Content root path: D:\My_folder\Studying\epam\NetCore_Mentoring\NetCore_Mentoring
+Home page was opened.
+Home page was opened.
