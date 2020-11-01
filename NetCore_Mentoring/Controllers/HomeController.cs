@@ -14,8 +14,7 @@ namespace NetCore_Mentoring.Controllers
 
         public HomeController(
             ILogger<HomeController> logger, 
-            ICategoryService categoryService,
-            IProductService productService)
+            ICategoryService categoryService)
         {
             _logger = logger;
             this.categoryService = categoryService;
@@ -24,6 +23,7 @@ namespace NetCore_Mentoring.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            _logger.LogInformation("Home page was opened.");
             return View();
         }
 
