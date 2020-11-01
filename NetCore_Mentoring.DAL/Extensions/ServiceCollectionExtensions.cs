@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using NetCore_Mentoring.DAL.EntityFramework;
+using NetCore_Mentoring.DAL.DatabaseContext;
 using NetCore_Mentoring.DAL.Repositories;
 using NetCore_Mentoring.DAL.Repositories.Interfaces;
 
-namespace NetCore_Mentoring.BLL.Extensions
+namespace NetCore_Mentoring.DAL.Extensions
 {
     public static class ServiceCollectionExtensions
     {

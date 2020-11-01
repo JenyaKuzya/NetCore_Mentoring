@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using NetCore_Mentoring.BLL.Models;
 using NetCore_Mentoring.BLL.Services.Interfaces;
-using NetCore_Mentoring.DAL.EntityFramework;
+using NetCore_Mentoring.DAL.DatabaseContext;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -68,9 +68,9 @@ namespace NetCore_Mentoring.API.Controllers
         }
 
         // GET: Products/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            PopulateCategoriesDropDownList();
+            await PopulateCategoriesDropDownList();
             PopulateSuppliersDropDownList();
             return View();
         }
@@ -111,7 +111,7 @@ namespace NetCore_Mentoring.API.Controllers
                 return NotFound();
             }
 
-            PopulateCategoriesDropDownList();
+            await PopulateCategoriesDropDownList();
             PopulateSuppliersDropDownList();
             return View(product);
         }
@@ -202,9 +202,9 @@ namespace NetCore_Mentoring.API.Controllers
             return _context.Products.Any(e => e.ProductId == id);
         }
 
-        private void PopulateCategoriesDropDownList()
+        private async Task PopulateCategoriesDropDownList()
         {
-            var categories = categoryService.GetAll();
+            var categories = await categoryService.GetAsync();
 
             ViewBag.CategoryId = new SelectList(categories, "CategoryId", "CategoryName");
         }

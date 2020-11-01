@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace NetCore_Mentoring.API.Models
+namespace NetCore_Mentoring.API.Utils
 {
     public class FileLoggerProvider : ILoggerProvider
     {

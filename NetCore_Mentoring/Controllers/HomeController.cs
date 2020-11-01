@@ -1,23 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using NetCore_Mentoring.BLL.Services.Interfaces;
 using NetCore_Mentoring.Models;
 using System.Diagnostics;
 
 namespace NetCore_Mentoring.Controllers
 {
-    [Route("[controller]")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ICategoryService categoryService;
 
         public HomeController(
-            ILogger<HomeController> logger, 
-            ICategoryService categoryService)
+            ILogger<HomeController> logger)
         {
             _logger = logger;
-            this.categoryService = categoryService;
         }
 
         [HttpGet]
@@ -27,20 +22,13 @@ namespace NetCore_Mentoring.Controllers
             return View();
         }
 
-        [HttpGet("categories")]
-        public IActionResult Categories()
-        {
-            var categories = categoryService.GetAll();
-
-            return View(categories);
-        }
-
         [HttpGet("contacts")]
         public IActionResult Contacts()
         {
             return View();
         }
 
+        [HttpGet("errors")]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
